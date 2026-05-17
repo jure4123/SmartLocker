@@ -17,6 +17,7 @@ async function getLogs(req, res) {
     const logs = await AccessLog.find(filter)
       .populate("locker", "name location")
       .populate("user", "name email role")
+      .populate("reservation")
       .sort({ createdAt: -1 });
 
     return res.json(logs);

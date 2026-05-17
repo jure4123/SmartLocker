@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
       auth: "/api/auth",
       users: "/api/users",
       lockers: "/api/lockers",
+      reservations: "/api/reservations",
       logs: "/api/logs"
     }
   });
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", require("./src/routes/authRoutes"));
 app.use("/api/users", require("./src/routes/userRoutes"));
 app.use("/api/lockers", require("./src/routes/lockerRoutes"));
+app.use("/api/reservations", require("./src/routes/reservationRoutes"));
 app.use("/api/logs", require("./src/routes/accessLogRoutes"));
 
 const PORT = process.env.PORT || 3000;
